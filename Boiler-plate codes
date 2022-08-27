@@ -1,0 +1,17 @@
+For express server:
+const express = require("express");
+const app = express();
+
+app.set("view engine","ejs");//for using ejs file 
+
+app.get("/",function(req,res){
+  res.send("hello world"); //or we use app.render("");
+  
+});
+app.get("/about", function(req, res){
+  res.send("my name is sahil and i am an entrepreneur.");
+
+});
+app.listen(3000, function(){
+  console.log("Our server is started at 3000 port");
+});
