@@ -1,0 +1,2 @@
+Authentication Tools:
+npm i express passport passport-oauth2 ejs nodemon cookie-session dotenv
