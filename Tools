@@ -1,2 +1,21 @@
 Authentication Tools:
-npm i express passport passport-oauth2 ejs nodemon cookie-session dotenv
+npm i express passport ejs nodemon cookie-session dotenv body-parser mongoose express-session passport-local-mongoose passport-google-oauth20 mongoose-findorcreate
+//jshint esversion:6
+require('dotenv').config();
+const express = require("express");
+const bodyParser = require("body-parser");
+const ejs = require("ejs");
+const mongoose = require("mongoose");
+const session = require('express-session');
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const findOrCreate = require('mongoose-findorcreate');
+
+const app = express();
+
+app.use(express.static("public"));
+app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
